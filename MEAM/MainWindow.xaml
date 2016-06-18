@@ -9,15 +9,35 @@
         Title="MainWindow" Height="350" Width="525">
 
     <Window.Resources>
-        <Style TargetType="{x:Type Window}">
-            <Setter Property="Background" Value="Ivory"></Setter>            
+        <Style TargetType="{x:Type local:MainWindow}">
+            <Setter Property="FontFamily" Value="Segoe UI"></Setter>
+            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
         </Style>
+
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontFamily" Value="Segoe UI"></Setter>
+            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="FontFamily" Value="Segoe UI"></Setter>
+            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        </Style>
+
         <Style TargetType="{x:Type Grid}">
             <Setter Property="Background" Value="{Binding Path=Background, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"></Setter>
         </Style>
+
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="5 5 5 5"></Setter>
+            <Setter Property="Padding" Value="5 5 5 5"></Setter>
+        </Style>
+
         <Style x:Key="PlanCtrlStyle">
-            <Setter Property="Control.FontFamily" Value="Segoe UI"></Setter>
-            <Setter Property="Control.FontSize" Value="12"></Setter>
+
             <Setter Property="Control.Padding" Value="5"></Setter>
             <Setter Property="Control.Margin" Value="5"></Setter>
         </Style>
@@ -25,11 +45,44 @@
 
     <Grid x:Name="PlanWindow">
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
         </Grid.RowDefinitions>
 
+        <StackPanel x:Name="pCalculatons" Orientation="Horizontal" Grid.Row="0" Background="Ivory">
+            <Button Click="CalculatePlan">Расчет графика</Button>
+            
+            <StackPanel Orientation="Horizontal" Margin="5 0 5 0">
+                <Label>Рентабельность активов:</Label>
+                <TextBlock Text="{Binding Path=Revenue, StringFormat=N}"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="5 0 5 0">
+                <Label>Нарушений по риску:</Label>
+                <TextBlock Text="{Binding Path=RiskRestriction}"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="5 0 5 0">
+                <Label>Нарушений по людским ресурсам:</Label>
+                <TextBlock Text="{Binding Path=HRRestriction}"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="5 0 5 0">
+                <Label>Нарушений по ЗИП:</Label>
+                <TextBlock Text="{Binding Path=CIRestriction}"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="5 0 5 0">
+                <Label>Нарушений по времени:</Label>
+                <TextBlock Text="{Binding Path=TimeRestriction}"></TextBlock>
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" x:Name="pProgress" Visibility="Hidden">
+            <ProgressBar x:Name="calcProgress" Height="10" Margin="10 15 10 10"></ProgressBar>
+        </StackPanel>
 
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.Row="1" Style="{StaticResource PlanCtrlStyle}">
             <ItemsControl x:Name="PlanCtrl" ItemsSource="{Binding Path=Items}">
@@ -49,7 +102,7 @@
                                            FontWeight="Medium"/>
                             </Grid>
 
-                            <ItemsControl ItemsSource="{Binding Path=Plan.Days}">
+                            <ItemsControl ItemsSource="{Binding Path=Days}">
                                 <ItemsControl.ItemsPanel>
                                     <ItemsPanelTemplate>
                                         <StackPanel Orientation="Horizontal"/>
@@ -65,7 +118,7 @@
                                                 <RowDefinition Height="*"></RowDefinition>
                                             </Grid.RowDefinitions>
 
-                                            <TextBlock Grid.Row="0" FontSize="10" Text="{Binding Path=Day}"/>
+                                            <TextBlock Grid.Row="0" FontSize="10" Text="{Binding Path=DayLabel}"/>
                                             <ItemsControl Grid.Row="1" ItemsSource="{Binding Path=Tasks}">
                                                 <ItemsControl.ItemTemplate>
                                                     <DataTemplate>

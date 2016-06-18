@@ -7,7 +7,7 @@ namespace MEAMDataGen
     {
         public static T Read<T>(string prompt, T defaultValue)
         {
-            var parseMethod = typeof(T).GetMethod("Parse", BindingFlags.Static);
+            var parseMethod = typeof(T).GetMethod("Parse", new Type[] { typeof(string) });
             if (parseMethod == null && typeof(T) != typeof(string))
                 Console.WriteLine("Error! Can't parse!");
 

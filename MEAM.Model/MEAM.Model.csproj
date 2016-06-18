@@ -49,7 +49,6 @@
     <Compile Include="MaintenanceDay.cs" />
     <Compile Include="MaintenanceObject.cs" />
     <Compile Include="MaintenancePlan.cs" />
-    <Compile Include="MaintenancePlanItem.cs" />
     <Compile Include="MaintenanceTask.cs" />
     <Compile Include="ModelSerializer.cs" />
     <Compile Include="ObjectMaintenancePlan.cs" />

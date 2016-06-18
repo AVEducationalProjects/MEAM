@@ -26,10 +26,22 @@ namespace MEAM.Model
             }
         }
 
-        public static void SaveMaintenancePlan(MaintenancePlan plan, string file)
+        public static MaintenancePlan LoadMaintenancePlan(string file)
         {
-            throw new NotImplementedException();
+            using (var planfile = new StreamReader(file))
+            {
+                return JsonConvert.DeserializeObject<MaintenancePlan>(planfile.ReadToEnd());
+            }
         }
 
+        public static void SaveMaintenancePlan(MaintenancePlan plan, string file)
+        {
+            using (var planfile = new StreamWriter(file))
+            {
+                planfile.WriteLine(JsonConvert.SerializeObject(plan));
+            }
+        }
+
+        
     }
 }

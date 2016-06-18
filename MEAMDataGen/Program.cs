@@ -12,8 +12,8 @@ namespace MEAMDataGen
     {
         public Dictionary<string, Action> Actions = new Dictionary<string, Action>
         {
-            {"gen-objs", MEAMObjectsGen.GenerateObjects},
-            {"gen-schd", MEAMPlanGen.GenerateEmptyYearPlan}
+            {"genobjs", MEAMObjectsGen.GenerateObjects},
+            {"genplan", MEAMPlanGen.GenerateEmptyYearPlan}
         };
 
         static void Main(string[] args)

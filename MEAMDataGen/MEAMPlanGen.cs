@@ -2,7 +2,7 @@ using System;
 using MEAM.Model;
 using MEAMDataGen;
 
-static internal class MEAMPlanGen
+static class MEAMPlanGen
 {
     public static void GenerateEmptyYearPlan()
     {
@@ -10,7 +10,7 @@ static internal class MEAMPlanGen
         var end = (new DateTime(start.Year + 1, start.Month, start.Day)).AddDays(-1);
 
         var objects = ModelSerializer.LoadObjects(ConsoleUtils.Read("Objects file name: ", "data\\objects.json"));
-        var plan = ModelGenerator.CreateMaintenancePlan(objects);
+        var plan = ModelGenerator.CreateMaintenancePlan(objects, start, end);
         ModelSerializer.SaveMaintenancePlan(plan, ConsoleUtils.Read("Plan file name: ", "data\\plan.json"));
     }
 }

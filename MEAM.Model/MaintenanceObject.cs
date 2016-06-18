@@ -6,5 +6,7 @@
         public double PD { get; set; }
         public double PDIncrement { get; set; }
         public double MaxPD { get; set; }
+        public double Revenue { get; set; }
+        public double CostOfDeny { get; set; }
     }
 }

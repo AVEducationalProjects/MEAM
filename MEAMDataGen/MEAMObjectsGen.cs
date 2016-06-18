@@ -16,7 +16,9 @@ static internal class MEAMObjectsGen
             var objects = names.Select(x => new MaintenanceObject
             {
                 Name = x,
-                PD = _rand.NextDouble() * 0.2,
+                Revenue = _rand.NextDouble()*10000,
+                CostOfDeny = _rand.NextDouble()*2000,
+                PD = _rand.NextDouble() * 0.04,
                 PDIncrement = 0.5 / (365 * (_rand.Next(5) + 1)),
                 MaxPD = 0.05 + _rand.NextDouble() * 0.1
             });
