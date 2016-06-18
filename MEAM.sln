@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEAM", "MEAM\MEAM.csproj", "{A4FE552A-29C4-4C55-8A18-D1F482BDB2CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEAMDataGen", "MEAMDataGen\MEAMDataGen.csproj", "{857E6D21-FDCF-42CC-93FE-35C4ED444798}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEAM.Model", "MEAM.Model\MEAM.Model.csproj", "{878E04AF-77F8-4709-949A-60BC0D348F38}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A4FE552A-29C4-4C55-8A18-D1F482BDB2CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4FE552A-29C4-4C55-8A18-D1F482BDB2CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4FE552A-29C4-4C55-8A18-D1F482BDB2CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4FE552A-29C4-4C55-8A18-D1F482BDB2CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{857E6D21-FDCF-42CC-93FE-35C4ED444798}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{857E6D21-FDCF-42CC-93FE-35C4ED444798}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{857E6D21-FDCF-42CC-93FE-35C4ED444798}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{857E6D21-FDCF-42CC-93FE-35C4ED444798}.Release|Any CPU.Build.0 = Release|Any CPU
+		{878E04AF-77F8-4709-949A-60BC0D348F38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{878E04AF-77F8-4709-949A-60BC0D348F38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{878E04AF-77F8-4709-949A-60BC0D348F38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{878E04AF-77F8-4709-949A-60BC0D348F38}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
