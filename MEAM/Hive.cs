@@ -19,17 +19,23 @@ namespace MEAM
             get { return _model.Clone(); }
         }
 
+        public List<MaintenanceTask> AvailableTasks { get; private set; }
+
         public int Count { get; private set; }
 
-        public Hive(MaintenancePlan model)
+        public Hive(MaintenancePlan model, List<MaintenanceTask> tasks, int scout, int reduce, int exchange)
         {
-            bees.Add(new Scout(this));
-            bees.Add(new Scout(this));
-            bees.Add(new WorkerReduce(this));
-            bees.Add(new WorkerExchange(this));
+            for (int i = 0; i < scout; i++)
+                bees.Add(new Scout(this));
+            for (int i = 0; i < reduce; i++)
+                bees.Add(new WorkerReduce(this));
+            for (int i = 0; i < exchange; i++)
+                bees.Add(new WorkerExchange(this));
+
+            AvailableTasks = new List<MaintenanceTask>(tasks);
 
             _model = model.Clone();
-            Model.Items.ForEach(x => { x.Calendar.Clear(); x.CalculateDays(); });
+            _model.Items.ForEach(x => { x.Calendar.Keys.ToList().ForEach(day=>x.Calendar[day]?.Clear()); x.CalculateDays(); });
         }
 
         public void Put(MaintenancePlan plan)
@@ -54,21 +60,7 @@ namespace MEAM
         {
             lock (_data)
             {
-                if (!_data.Any())
-                    return null;
-
-                double maxChance = 0;
-                for (int i = 1; i <= _data.Count; i++)
-                    maxChance += 1 / i;
-
-                var rnd = rand.NextDouble() * maxChance;
-                for (int i = 0; i < _data.Count; i++)
-                {
-                    rnd -= 1 / (i + 1);
-                    if (rnd <= 0)
-                        return _data.OrderBy(x => x.Item2).ToArray()[i].Item1.Clone();
-                }
-                return null;
+                return rand.NextLinearRandomItem(_data.OrderBy(x => x.Item2).ToList())?.Item1?.Clone();
             }
 
         }

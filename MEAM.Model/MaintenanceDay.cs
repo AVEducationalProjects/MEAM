@@ -14,7 +14,7 @@ namespace MEAM.Model
 
         public double RiskViolance { get; set; }
 
-        public SolidColorBrush RiskViolanceColor => new SolidColorBrush(Color.FromRgb(255, (byte)Math.Round(255-150*RiskViolance), (byte)Math.Round(255 -150*RiskViolance)));
+        public Color RiskViolanceColor => Color.FromRgb(255, (byte)Math.Round(255-150*RiskViolance), (byte)Math.Round(255 -150*RiskViolance));
 
         public List<MaintenanceTask> Tasks { get; set; }
         

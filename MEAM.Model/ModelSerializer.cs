@@ -10,6 +10,14 @@ namespace MEAM.Model
 {
     public class ModelSerializer
     {
+        public static List<MaintenanceTask> LoadTasks(string file)
+        {
+            using (var tasksfile = new StreamReader(file))
+            {
+                return JsonConvert.DeserializeObject<List<MaintenanceTask>>(tasksfile.ReadToEnd());
+            }
+        }
+
         public static List<MaintenanceObject> LoadObjects(string file)
         {
             using (var objfile = new StreamReader(file))

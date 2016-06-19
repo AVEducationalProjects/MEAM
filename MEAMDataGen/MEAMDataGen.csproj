@@ -57,9 +57,9 @@
     <Content Include="data\objects.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="data\tasks.txt">
+    <None Include="data\tasks.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MEAM.Model\MEAM.Model.csproj">
