@@ -13,11 +13,9 @@ namespace MEAM
 
         protected override void Behavior()
         {
-            var plan = _hive.Get();
-            if (plan==null)
+            var reducedPlan = _hive.Get();
+            if (reducedPlan == null)
                 return;
-
-            var reducedPlan = plan.Clone();
 
             var daysToReduce = reducedPlan.Items
                 .SelectMany(x => x.Days)

@@ -41,11 +41,11 @@
         <Label Grid.Row="3">Потери при не работоспособности:</Label>
         <TextBox Grid.Row="4" Text="{Binding Path=CostOfDeny, StringFormat={}{0:F2}}"></TextBox>
         <Label Grid.Row="5">Допустимая вероятность отказа:</Label>
-        <TextBox Grid.Row="6" Text="{Binding Path=MaxPD, StringFormat={}{0:F2}}"></TextBox>
+        <TextBox Grid.Row="6" Text="{Binding Path=MaxPD, StringFormat={}{0:F4}}"></TextBox>
         <Label Grid.Row="7">Вероятность отказа в начале периода:</Label>
-        <TextBox Grid.Row="8" Text="{Binding Path=PD, StringFormat={}{0:F2}}"></TextBox>
+        <TextBox Grid.Row="8" Text="{Binding Path=PD, StringFormat={}{0:F4}}"></TextBox>
         <Label Grid.Row="9">Увеличение вероятности отказа в день:</Label>
-        <TextBox Grid.Row="10" Text="{Binding Path=PDIncrement, StringFormat={}{0:F2}}"></TextBox>
+        <TextBox Grid.Row="10" Text="{Binding Path=PDIncrement, StringFormat={}{0:F4}}"></TextBox>
 
         <Button Grid.Row="11" Click="ButtonBase_OnClick">Закрыть</Button>
     </Grid>

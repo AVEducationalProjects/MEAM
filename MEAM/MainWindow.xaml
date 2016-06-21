@@ -79,28 +79,28 @@
             </Button>
             
             <StackPanel Orientation="Horizontal" Margin="5 0 5 0">
-                <Label>Рентабельность активов:</Label>
-                <TextBlock x:Name="txtRevenue" Text="{Binding Path=Revenue, StringFormat=N}"></TextBlock>
+                <Label FontSize="14">Рентабельность активов:</Label>
+                <TextBlock FontSize="14" FontWeight="Bold" Foreground="Green" x:Name="txtRevenue" Text="{Binding Path=Revenue, StringFormat=N0}"></TextBlock>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="5 0 5 0">
-                <Label>Нарушений по риску:</Label>
-                <TextBlock x:Name="txtRiskRestriction" Text="{Binding Path=RiskRestriction}"></TextBlock>
+                <Label FontSize="14">Нарушений по риску:</Label>
+                <TextBlock FontSize="14" x:Name="txtRiskRestriction" Text="{Binding Path=RiskRestriction}"></TextBlock>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="5 0 5 0">
-                <Label>Нарушений по людским ресурсам:</Label>
-                <TextBlock x:Name="txtHRRestriction" Text="{Binding Path=HRRestriction}"></TextBlock>
+                <Label FontSize="14">Нарушений по людским ресурсам:</Label>
+                <TextBlock FontSize="14" x:Name="txtHRRestriction" Text="{Binding Path=HRRestriction}"></TextBlock>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="5 0 5 0">
-                <Label>Нарушений по ЗИП:</Label>
-                <TextBlock x:Name="txtCIRestriction" Text="{Binding Path=CIRestriction}"></TextBlock>
+                <Label FontSize="14">Нарушений по ЗИП:</Label>
+                <TextBlock FontSize="14" x:Name="txtCIRestriction" Text="{Binding Path=CIRestriction}"></TextBlock>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="5 0 5 0">
-                <Label>Нарушений по времени:</Label>
-                <TextBlock x:Name="txtTimeRestriction" Text="{Binding Path=TimeRestriction}"></TextBlock>
+                <Label FontSize="14">Нарушений по времени:</Label>
+                <TextBlock FontSize="14" x:Name="txtTimeRestriction" Text="{Binding Path=TimeRestriction}"></TextBlock>
             </StackPanel>
 
         </StackPanel>
@@ -171,7 +171,7 @@
                                             <ItemsControl Grid.Row="1" ItemsSource="{Binding Path=Tasks}">
                                                 <ItemsControl.ItemTemplate>
                                                     <DataTemplate>
-                                                        <Border BorderThickness="1" CornerRadius="5" BorderBrush="LightGray" Background="PowderBlue" Margin="2" Padding="3">
+                                                        <Border BorderThickness="1" CornerRadius="5" BorderBrush="LightGray" Background="#FFC5E7F1" Margin="2" Padding="3">
                                                             <TextBlock Text="{Binding Path=Name}" TextWrapping="Wrap"></TextBlock>
                                                         </Border>
                                                     </DataTemplate>
